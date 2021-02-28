@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quote Api</title>
+</head>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<table>
+    <tr>
+        <th>Quote</th>
+        <th>Author</th>
+    </tr>
+    <tr th:each="quote: ${quoteAttribute}">
+        <td th:text="${quote.getQuote()}"></td>
+        <td th:text="${quote.getAuthor()}"></td>
+
+    </tr>
+</table>
+<body>
+</body>
+</html>
